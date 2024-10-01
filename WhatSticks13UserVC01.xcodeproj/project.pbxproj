@@ -9,21 +9,47 @@
 /* Begin PBXBuildFile section */
 		0100C9112CA9D9EE0086B015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9102CA9D9EE0086B015 /* AppDelegate.swift */; };
 		0100C9132CA9D9EE0086B015 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9122CA9D9EE0086B015 /* SceneDelegate.swift */; };
-		0100C9152CA9D9EE0086B015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9142CA9D9EE0086B015 /* ViewController.swift */; };
-		0100C9182CA9D9EE0086B015 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0100C9172CA9D9EE0086B015 /* Base */; };
+		0100C9152CA9D9EE0086B015 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9142CA9D9EE0086B015 /* HomeVC.swift */; };
 		0100C91A2CA9D9EF0086B015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0100C9192CA9D9EF0086B015 /* Assets.xcassets */; };
 		0100C91D2CA9D9EF0086B015 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0100C91C2CA9D9EF0086B015 /* Base */; };
+		0100C9252CA9DA170086B015 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9242CA9DA170086B015 /* TabController.swift */; };
+		0100C9282CA9DA730086B015 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9272CA9DA730086B015 /* UserVC.swift */; };
+		0100C92A2CA9DA8B0086B015 /* TemplateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9292CA9DA8B0086B015 /* TemplateVC.swift */; };
+		0100C92C2CA9DAA40086B015 /* MiscUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C92B2CA9DAA30086B015 /* MiscUtils.swift */; };
+		0100C92E2CA9DB560086B015 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C92D2CA9DB560086B015 /* UserStore.swift */; };
+		0100C9302CAA5D8C0086B015 /* UserVcFindAppleHealthPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C92F2CAA5D8C0086B015 /* UserVcFindAppleHealthPermissionsView.swift */; };
+		0100C9352CAA5E250086B015 /* UserVcDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9342CAA5E250086B015 /* UserVcDelete.swift */; };
+		0100C9372CAA5E5B0086B015 /* UserVcLocationDayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9362CAA5E5B0086B015 /* UserVcLocationDayWeather.swift */; };
+		0100C9392CAA5EA10086B015 /* UserVcOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9382CAA5EA10086B015 /* UserVcOffline.swift */; };
+		0100C93B2CAA5EE90086B015 /* UserVcUserStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C93A2CAA5EE90086B015 /* UserVcUserStatusView.swift */; };
+		0100C93D2CAA5F120086B015 /* UserVcRegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C93C2CAA5F120086B015 /* UserVcRegisterButton.swift */; };
+		0100C9412CAA5F970086B015 /* DashboardHealthDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C93E2CAA5F970086B015 /* DashboardHealthDataObject.swift */; };
+		0100C9422CAA5F970086B015 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C93F2CAA5F970086B015 /* User.swift */; };
+		0100C9442CAA63960086B015 /* DemoSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9432CAA63960086B015 /* DemoSwitchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0100C90D2CA9D9EE0086B015 /* WhatSticks13UserVC01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatSticks13UserVC01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0100C9102CA9D9EE0086B015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0100C9122CA9D9EE0086B015 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0100C9142CA9D9EE0086B015 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0100C9172CA9D9EE0086B015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0100C9142CA9D9EE0086B015 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		0100C9192CA9D9EF0086B015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0100C91C2CA9D9EF0086B015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0100C91E2CA9D9EF0086B015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0100C9242CA9DA170086B015 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		0100C9272CA9DA730086B015 /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
+		0100C9292CA9DA8B0086B015 /* TemplateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateVC.swift; sourceTree = "<group>"; };
+		0100C92B2CA9DAA30086B015 /* MiscUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscUtils.swift; sourceTree = "<group>"; };
+		0100C92D2CA9DB560086B015 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		0100C92F2CAA5D8C0086B015 /* UserVcFindAppleHealthPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVcFindAppleHealthPermissionsView.swift; sourceTree = "<group>"; };
+		0100C9342CAA5E250086B015 /* UserVcDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVcDelete.swift; sourceTree = "<group>"; };
+		0100C9362CAA5E5B0086B015 /* UserVcLocationDayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVcLocationDayWeather.swift; sourceTree = "<group>"; };
+		0100C9382CAA5EA10086B015 /* UserVcOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVcOffline.swift; sourceTree = "<group>"; };
+		0100C93A2CAA5EE90086B015 /* UserVcUserStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVcUserStatusView.swift; sourceTree = "<group>"; };
+		0100C93C2CAA5F120086B015 /* UserVcRegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVcRegisterButton.swift; sourceTree = "<group>"; };
+		0100C93E2CAA5F970086B015 /* DashboardHealthDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardHealthDataObject.swift; sourceTree = "<group>"; };
+		0100C93F2CAA5F970086B015 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0100C9432CAA63960086B015 /* DemoSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSwitchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +82,60 @@
 		0100C90F2CA9D9EE0086B015 /* WhatSticks13UserVC01 */ = {
 			isa = PBXGroup;
 			children = (
-				0100C9102CA9D9EE0086B015 /* AppDelegate.swift */,
-				0100C9122CA9D9EE0086B015 /* SceneDelegate.swift */,
-				0100C9142CA9D9EE0086B015 /* ViewController.swift */,
-				0100C9162CA9D9EE0086B015 /* Main.storyboard */,
-				0100C9192CA9D9EF0086B015 /* Assets.xcassets */,
-				0100C91B2CA9D9EF0086B015 /* LaunchScreen.storyboard */,
+				0100C92D2CA9DB560086B015 /* UserStore.swift */,
+				0100C92B2CA9DAA30086B015 /* MiscUtils.swift */,
+				0100C9402CAA5F970086B015 /* Models */,
+				0100C9322CAA5DCA0086B015 /* Views */,
+				0100C9262CA9DA1E0086B015 /* Supporting */,
 				0100C91E2CA9D9EF0086B015 /* Info.plist */,
 			);
 			path = WhatSticks13UserVC01;
+			sourceTree = "<group>";
+		};
+		0100C9262CA9DA1E0086B015 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				0100C9102CA9D9EE0086B015 /* AppDelegate.swift */,
+				0100C9122CA9D9EE0086B015 /* SceneDelegate.swift */,
+				0100C9192CA9D9EF0086B015 /* Assets.xcassets */,
+				0100C91B2CA9D9EF0086B015 /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		0100C9312CAA5DB60086B015 /* UserVC */ = {
+			isa = PBXGroup;
+			children = (
+				0100C9432CAA63960086B015 /* DemoSwitchView.swift */,
+				0100C9272CA9DA730086B015 /* UserVC.swift */,
+				0100C92F2CAA5D8C0086B015 /* UserVcFindAppleHealthPermissionsView.swift */,
+				0100C9362CAA5E5B0086B015 /* UserVcLocationDayWeather.swift */,
+				0100C9342CAA5E250086B015 /* UserVcDelete.swift */,
+				0100C9382CAA5EA10086B015 /* UserVcOffline.swift */,
+				0100C93A2CAA5EE90086B015 /* UserVcUserStatusView.swift */,
+				0100C93C2CAA5F120086B015 /* UserVcRegisterButton.swift */,
+			);
+			path = UserVC;
+			sourceTree = "<group>";
+		};
+		0100C9322CAA5DCA0086B015 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0100C9242CA9DA170086B015 /* TabController.swift */,
+				0100C9292CA9DA8B0086B015 /* TemplateVC.swift */,
+				0100C9142CA9D9EE0086B015 /* HomeVC.swift */,
+				0100C9312CAA5DB60086B015 /* UserVC */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0100C9402CAA5F970086B015 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0100C93E2CAA5F970086B015 /* DashboardHealthDataObject.swift */,
+				0100C93F2CAA5F970086B015 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +198,6 @@
 			files = (
 				0100C91A2CA9D9EF0086B015 /* Assets.xcassets in Resources */,
 				0100C91D2CA9D9EF0086B015 /* Base in Resources */,
-				0100C9182CA9D9EE0086B015 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +208,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0100C9152CA9D9EE0086B015 /* ViewController.swift in Sources */,
+				0100C9152CA9D9EE0086B015 /* HomeVC.swift in Sources */,
+				0100C9282CA9DA730086B015 /* UserVC.swift in Sources */,
+				0100C9412CAA5F970086B015 /* DashboardHealthDataObject.swift in Sources */,
+				0100C9252CA9DA170086B015 /* TabController.swift in Sources */,
+				0100C9422CAA5F970086B015 /* User.swift in Sources */,
 				0100C9112CA9D9EE0086B015 /* AppDelegate.swift in Sources */,
+				0100C9352CAA5E250086B015 /* UserVcDelete.swift in Sources */,
+				0100C9392CAA5EA10086B015 /* UserVcOffline.swift in Sources */,
+				0100C93B2CAA5EE90086B015 /* UserVcUserStatusView.swift in Sources */,
+				0100C9442CAA63960086B015 /* DemoSwitchView.swift in Sources */,
+				0100C92A2CA9DA8B0086B015 /* TemplateVC.swift in Sources */,
 				0100C9132CA9D9EE0086B015 /* SceneDelegate.swift in Sources */,
+				0100C9302CAA5D8C0086B015 /* UserVcFindAppleHealthPermissionsView.swift in Sources */,
+				0100C92E2CA9DB560086B015 /* UserStore.swift in Sources */,
+				0100C92C2CA9DAA40086B015 /* MiscUtils.swift in Sources */,
+				0100C93D2CAA5F120086B015 /* UserVcRegisterButton.swift in Sources */,
+				0100C9372CAA5E5B0086B015 /* UserVcLocationDayWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0100C9162CA9D9EE0086B015 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0100C9172CA9D9EE0086B015 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0100C91B2CA9D9EF0086B015 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +373,6 @@
 				INFOPLIST_FILE = WhatSticks13UserVC01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +400,6 @@
 				INFOPLIST_FILE = WhatSticks13UserVC01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
