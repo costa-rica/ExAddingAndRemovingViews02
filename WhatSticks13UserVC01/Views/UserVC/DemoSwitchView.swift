@@ -157,82 +157,41 @@ class DemoSwitchView: UIView {
     
     /* Objc Methods*/
     @objc private func switchValueChanged_01(_ sender: UISwitch) {
-//        userStore.isOnline = false
-//        userStore.user.email = nil
-//        userStore.user.username = "ambivalent_elf_0000"
-        if sender.isOn {
-//            userStore.isOnline = false
-//            userStore.user.email = nil
-//            userStore.user.username = nil
-//            
-//            print("DemoSwitchView switch 01 is ON - Offline AND GenericUsername")
-//            
-//            // All other switches turned off
-//            self.swtchOptionalView02.isOn = false
-//            self.swtchOptionalView03.isOn = false
-//            self.swtchOptionalView04.isOn = false
-//            
-//            // All other switches enabled
-//            self.swtchOptionalView02.isEnabled = true
-//            self.swtchOptionalView03.isEnabled = true
-//            self.swtchOptionalView04.isEnabled = true
-//
-//            delegate?.case_option_1_Offline_and_generic_name()
-            
+        print("- switch 01")
+        if let unwpDelegate = delegate {
+            print("- unwrappged delgate")
+            if sender.isOn {
+                unwpDelegate.addView(unwpDelegate.vwFindAppleHealthPermissions)
+            } else {
+                unwpDelegate.removeView(unwpDelegate.vwFindAppleHealthPermissions)
+            }
         }
+
     }
     
     @objc private func switchValueChanged_02(_ sender: UISwitch) {
-//        userStore.isOnline = true
-//        userStore.user.email = nil
-//        userStore.user.username = "ambivalent_elf_0000"
-//        if sender.isOn {
-//            userStore.isOnline = true
-//            userStore.user.email = nil
-//            userStore.user.username = nil
-//            
-//            delegate!.vwUserStatus.setup_vcRegistrationButton()
-//            
-//            print("DemoSwitchView switch 02 is ON - Online AND GenericUsername")
-//            
-//            // All other switches turned off
-//            self.swtchOptionalView01.isOn = false
-//            self.swtchOptionalView03.isOn = false
-//            self.swtchOptionalView04.isOn = false
-//            
-//            // All other switches enabled
-//            self.swtchOptionalView01.isEnabled = true
-//            self.swtchOptionalView03.isEnabled = true
-//            self.swtchOptionalView04.isEnabled = true
-//            
-//            delegate?.case_option_2_Online_and_generic_name()
-//        }
+        print("- switch 02")
+        if let unwpDelegate = delegate {
+            print("- unwrappged delgate")
+            if sender.isOn {
+                unwpDelegate.addView(unwpDelegate.vwLocationDayWeather)
+            } else {
+                unwpDelegate.removeView(unwpDelegate.vwLocationDayWeather)
+            }
+        }
     }
     
     @objc private func switchValueChanged_03(_ sender: UISwitch) {
         
-//        if sender.isOn {
-//            userStore.isOnline = true
-//            userStore.user.email = "email@some_domain.com"
-//            userStore.user.username = "email"
-//            
-////            delegate!.vwUserStatus.setup_vcRegistrationButton()
-//            delegate!.vwUserStatus.remove_vcRegistrationButton()
-//            
-//            print("DemoSwitchView switch 02 is ON - Online AND GenericUsername")
-//            
-//            // All other switches turned off
-//            self.swtchOptionalView01.isOn = false
-//            self.swtchOptionalView02.isOn = false
-//            self.swtchOptionalView04.isOn = false
-//            
-//            // All other switches enabled
-//            self.swtchOptionalView01.isEnabled = true
-//            self.swtchOptionalView02.isEnabled = true
-//            self.swtchOptionalView04.isEnabled = true
-//            
-//            delegate?.case_option_3_Online_and_custom_email()
-//        }
+        print("- switch 03")
+        if let unwpDelegate = delegate {
+            print("- unwrappged delgate")
+            if sender.isOn {
+                unwpDelegate.addView(unwpDelegate.vwOffline)
+            } else {
+                unwpDelegate.removeView(unwpDelegate.vwOffline)
+            }
+        }
     }
     
     @objc private func switchValueChanged_04(_ sender: UISwitch) {
@@ -268,7 +227,7 @@ class DemoSwitchView: UIView {
 protocol DemoSwitchViewDelegate: AnyObject {
     func removeSpinner()
     func showSpinner()
-    func templateAlert(alertTitle:String,alertMessage: String,  backScreen: Bool)
+//    func templateAlert(alertTitle:String,alertMessage: String,  backScreen: Bool)
     func presentAlertController(_ alertController: UIAlertController)
     func touchDown(_ sender: UIButton)
 //    var constraints_Offline_NoEmail:[NSLayoutConstraint] {get}
@@ -278,5 +237,10 @@ protocol DemoSwitchViewDelegate: AnyObject {
 //    func case_option_2_Online_and_generic_name()
 //    func case_option_3_Online_and_custom_email()
 //    func case_option_4_Offline_and_custom_email()
-    var vwUserStatus:UserVcUserStatusView {get}
+    func addView(_ newView: UIView) 
+    func removeView(_ viewToRemove: UIView)
+    var vwFindAppleHealthPermissions: UserVcFindAppleHealthPermissionsView {get}
+    var vwLocationDayWeather: UserVcLocationDayWeather {get}
+    var vwOffline: UserVcOffline {get}
+    var vwUserStatus: UserVcUserStatusView {get}
 }

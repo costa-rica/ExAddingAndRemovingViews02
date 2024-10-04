@@ -7,11 +7,12 @@
 
 import UIKit
 
-class UserVC: TemplateVC{
+class UserVC: TemplateVC, DemoSwitchViewDelegate{
 
     
     let scrollView = UIScrollView()
     let contentView = UIView()
+    var stackView = UIStackView()
     
     let vwDemoSwitch = DemoSwitchView()
         
@@ -48,51 +49,60 @@ class UserVC: TemplateVC{
         self.setup_TopSafeBar()
         setupScrollView()
         setupContentView()
-        ManageContentViews()
+        setupStackView()
+        addView(vwDemoSwitch)
+        vwDemoSwitch.delegate = self
     }
-    
-    func ManageContentViews(){
-        setup_vwDemoSwitch()
-        setup_vwFindAppleHealthPermissions()
-        setup_vwLocationDayWeather()
-    }
-    func setup_vwDemoSwitch(){
-        vwDemoSwitch.accessibilityIdentifier = "vwDemoSwitch"
-        vwDemoSwitch.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(vwDemoSwitch)
-
+    private func setupStackView() {
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(stackView)
+        
         NSLayoutConstraint.activate([
-            vwDemoSwitch.topAnchor.constraint(equalTo: contentView.topAnchor),
-            vwDemoSwitch.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            vwDemoSwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-//            vwDemoSwitch.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: heightFromPct(percent: -10))
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
     
-    func setup_vwFindAppleHealthPermissions(){
-        vwFindAppleHealthPermissions.accessibilityIdentifier = "vwFindAppleHealthPermissions"
-        vwFindAppleHealthPermissions.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(vwFindAppleHealthPermissions)
-
-        NSLayoutConstraint.activate([
-            vwFindAppleHealthPermissions.topAnchor.constraint(equalTo: vwDemoSwitch.bottomAnchor),
-            vwFindAppleHealthPermissions.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            vwFindAppleHealthPermissions.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-//            vwFindAppleHealthPermissions.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: heightFromPct(percent: -10))
-        ])
+    // Method to add a new view to the stackView
+    func addView(_ newView: UIView) {
+        var viewsCount = stackView.subviews.count
+        print("stackView has \(viewsCount) 👀")
+        if let unwp_offline = newView as? UserVcOffline{
+            print("We got an offline view! 🎉")
+            stackView.insertArrangedSubview(unwp_offline, at: 1)
+        } else {
+            //        stackView.addArrangedSubview(newView)
+            stackView.insertArrangedSubview(newView, at: viewsCount)
+        }
     }
-    func setup_vwLocationDayWeather(){
-        vwLocationDayWeather.accessibilityIdentifier = "vwLocationDayWeather"
-        vwLocationDayWeather.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(vwLocationDayWeather)
-
-        NSLayoutConstraint.activate([
-            vwLocationDayWeather.topAnchor.constraint(equalTo: vwFindAppleHealthPermissions.bottomAnchor),
-            vwLocationDayWeather.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            vwLocationDayWeather.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            vwLocationDayWeather.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: heightFromPct(percent: -10))
-        ])
+    
+    // Method to remove a view from the stackView
+    func removeView(_ viewToRemove: UIView) {
+        stackView.removeArrangedSubview(viewToRemove)
+        viewToRemove.removeFromSuperview()
     }
+    
+
+//    func setup_vwDemoSwitch(){
+//        vwDemoSwitch.accessibilityIdentifier = "vwDemoSwitch"
+//        vwDemoSwitch.translatesAutoresizingMaskIntoConstraints = false
+//        contentView.addSubview(vwDemoSwitch)
+//
+////        NSLayoutConstraint.activate([
+////            vwDemoSwitch.topAnchor.constraint(equalTo: contentView.topAnchor),
+////            vwDemoSwitch.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+////            vwDemoSwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+//////            vwDemoSwitch.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: heightFromPct(percent: -10))
+////        ])
+//    }
+    
+
+
     
 }
 
@@ -123,74 +133,74 @@ extension UserVC {
     }
     
     
-    /*Manage Views */
-    func manageUserVcOptionalViews(){
-        
-        // Choose the bottomAnchor depending on isOnline and email status
-        if UserStore.shared.isGuestMode{
-            bottomAnchorForUserVcContentBottomAnchor = vwUserStatus.bottomAnchor// same as case_option_2_
-        }
-        else if !UserStore.shared.isOnline, UserStore.shared.user.email == nil {
-            bottomAnchorForUserVcContentBottomAnchor = vwOffline.bottomAnchor
-        }else if UserStore.shared.isOnline, UserStore.shared.user.email == nil{
-            bottomAnchorForUserVcContentBottomAnchor = vwUserStatus.bottomAnchor
-        } else if UserStore.shared.isOnline, UserStore.shared.user.email != nil{
-            bottomAnchorForUserVcContentBottomAnchor = vwUserDeleteAccount.bottomAnchor
-        } else if !UserStore.shared.isOnline, UserStore.shared.user.email != nil {
-            bottomAnchorForUserVcContentBottomAnchor = vwOffline.bottomAnchor
-        }
-        
-//        // Choose App's Mode: Dev or Prod and create set of constraints to attached to the bottom of the contentView
-//        if UserStore.shared.isInDevMode{
-//            constraintsForBottomOfUserVcContentView = [
-//                vwUserStatusDeveloperView.topAnchor.constraint(equalTo: bottomAnchorForUserVcContentBottomAnchor, constant: heightFromPct(percent: 3)),
-//                vwUserStatusDeveloperView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-//                vwUserStatusDeveloperView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-//                vwUserStatusDeveloperView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: heightFromPct(percent: -10)),
-//            ]
-//        } else {
-//            constraintsForBottomOfUserVcContentView = [
-//                bottomAnchorForUserVcContentBottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: heightFromPct(percent: -10)),
-//            ]
-//        }
-        
-//        // Choose case depending on isGuestMode, isOnline and email
+//    /*Manage Views */
+//    func manageUserVcOptionalViews(){
+//        
+//        // Choose the bottomAnchor depending on isOnline and email status
 //        if UserStore.shared.isGuestMode{
-//            case_option_2_Online_and_generic_name()
+//            bottomAnchorForUserVcContentBottomAnchor = vwUserStatus.bottomAnchor// same as case_option_2_
 //        }
 //        else if !UserStore.shared.isOnline, UserStore.shared.user.email == nil {
-//            case_option_1_Offline_and_generic_name()
+//            bottomAnchorForUserVcContentBottomAnchor = vwOffline.bottomAnchor
 //        }else if UserStore.shared.isOnline, UserStore.shared.user.email == nil{
-//            case_option_2_Online_and_generic_name()
+//            bottomAnchorForUserVcContentBottomAnchor = vwUserStatus.bottomAnchor
 //        } else if UserStore.shared.isOnline, UserStore.shared.user.email != nil{
-//            case_option_3_Online_and_custom_email()
+//            bottomAnchorForUserVcContentBottomAnchor = vwUserDeleteAccount.bottomAnchor
 //        } else if !UserStore.shared.isOnline, UserStore.shared.user.email != nil {
-//            case_option_4_Offline_and_custom_email()
+//            bottomAnchorForUserVcContentBottomAnchor = vwOffline.bottomAnchor
 //        }
-        
-//        // If Dev add the UserStatusDeveloperView
-//        if UserStore.shared.isInDevMode{
-//            vwUserStatusDeveloperView.delegate = self
-//            setup_vwUserStatusDeveloperView()
-//        }
-        
-        // Activate bottom constraint which is dependent of whether or not UserStatusDeveloperView is present
-        NSLayoutConstraint.activate(constraintsForBottomOfUserVcContentView)
-    }
+//        
+////        // Choose App's Mode: Dev or Prod and create set of constraints to attached to the bottom of the contentView
+////        if UserStore.shared.isInDevMode{
+////            constraintsForBottomOfUserVcContentView = [
+////                vwUserStatusDeveloperView.topAnchor.constraint(equalTo: bottomAnchorForUserVcContentBottomAnchor, constant: heightFromPct(percent: 3)),
+////                vwUserStatusDeveloperView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+////                vwUserStatusDeveloperView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+////                vwUserStatusDeveloperView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: heightFromPct(percent: -10)),
+////            ]
+////        } else {
+////            constraintsForBottomOfUserVcContentView = [
+////                bottomAnchorForUserVcContentBottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: heightFromPct(percent: -10)),
+////            ]
+////        }
+//        
+////        // Choose case depending on isGuestMode, isOnline and email
+////        if UserStore.shared.isGuestMode{
+////            case_option_2_Online_and_generic_name()
+////        }
+////        else if !UserStore.shared.isOnline, UserStore.shared.user.email == nil {
+////            case_option_1_Offline_and_generic_name()
+////        }else if UserStore.shared.isOnline, UserStore.shared.user.email == nil{
+////            case_option_2_Online_and_generic_name()
+////        } else if UserStore.shared.isOnline, UserStore.shared.user.email != nil{
+////            case_option_3_Online_and_custom_email()
+////        } else if !UserStore.shared.isOnline, UserStore.shared.user.email != nil {
+////            case_option_4_Offline_and_custom_email()
+////        }
+//        
+////        // If Dev add the UserStatusDeveloperView
+////        if UserStore.shared.isInDevMode{
+////            vwUserStatusDeveloperView.delegate = self
+////            setup_vwUserStatusDeveloperView()
+////        }
+//        
+//        // Activate bottom constraint which is dependent of whether or not UserStatusDeveloperView is present
+//        NSLayoutConstraint.activate(constraintsForBottomOfUserVcContentView)
+//    }
     
-    func remove_optionalViews(){
-        NSLayoutConstraint.deactivate(constraintsForBottomOfUserVcContentView)
-        NSLayoutConstraint.deactivate(constraints_Offline_NoEmail)
-        NSLayoutConstraint.deactivate(constraints_Online_NoEmail)
-        NSLayoutConstraint.deactivate(constraints_Offline_YesEmail)
-        NSLayoutConstraint.deactivate(constraints_Online_YesEmail)
-        vwLocationDayWeather.removeFromSuperview()
-        vwOffline.removeFromSuperview()
-        vwUserStatus.removeFromSuperview()
-        vwUserDeleteAccount.removeFromSuperview()
-//        vwUserStatusDeveloperView.removeFromSuperview()
-        print("--- finished remove_optionalViews -")
-    }
+//    func remove_optionalViews(){
+//        NSLayoutConstraint.deactivate(constraintsForBottomOfUserVcContentView)
+//        NSLayoutConstraint.deactivate(constraints_Offline_NoEmail)
+//        NSLayoutConstraint.deactivate(constraints_Online_NoEmail)
+//        NSLayoutConstraint.deactivate(constraints_Offline_YesEmail)
+//        NSLayoutConstraint.deactivate(constraints_Online_YesEmail)
+//        vwLocationDayWeather.removeFromSuperview()
+//        vwOffline.removeFromSuperview()
+//        vwUserStatus.removeFromSuperview()
+//        vwUserDeleteAccount.removeFromSuperview()
+////        vwUserStatusDeveloperView.removeFromSuperview()
+//        print("--- finished remove_optionalViews -")
+//    }
 }
 
 

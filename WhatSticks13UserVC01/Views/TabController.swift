@@ -60,9 +60,9 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 //            user_vc.vwLocationDayWeather.setLocationSwitchBasedOnUserPermissions()
 //            user_vc.vwLocationDayWeather.setLocationSwitchLabelText()
             
-            if user_vc.view.subviews.count > 0 {
-                user_vc.manageUserVcOptionalViews()
-            }
+//            if user_vc.view.subviews.count > 0 {
+//                user_vc.manageUserVcOptionalViews()
+//            }
         }
 
 //        if let manage_data_vc = nav_vc.children[0] as? ManageDataVC {// <--- altered for TEST DAta
