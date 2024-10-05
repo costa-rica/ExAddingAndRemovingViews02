@@ -26,6 +26,7 @@
 		0100C9412CAA5F970086B015 /* DashboardHealthDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C93E2CAA5F970086B015 /* DashboardHealthDataObject.swift */; };
 		0100C9422CAA5F970086B015 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C93F2CAA5F970086B015 /* User.swift */; };
 		0100C9442CAA63960086B015 /* DemoSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100C9432CAA63960086B015 /* DemoSwitchView.swift */; };
+		01E47FB62CB10F1E00CE393F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 01E47FB52CB10F1E00CE393F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		0100C93E2CAA5F970086B015 /* DashboardHealthDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardHealthDataObject.swift; sourceTree = "<group>"; };
 		0100C93F2CAA5F970086B015 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0100C9432CAA63960086B015 /* DemoSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSwitchView.swift; sourceTree = "<group>"; };
+		01E47FB52CB10F1E00CE393F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		0100C9042CA9D9ED0086B015 = {
 			isa = PBXGroup;
 			children = (
+				01E47FB52CB10F1E00CE393F /* README.md */,
 				0100C90F2CA9D9EE0086B015 /* WhatSticks13UserVC01 */,
 				0100C90E2CA9D9EE0086B015 /* Products */,
 			);
@@ -196,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E47FB62CB10F1E00CE393F /* README.md in Resources */,
 				0100C91A2CA9D9EF0086B015 /* Assets.xcassets in Resources */,
 				0100C91D2CA9D9EF0086B015 /* Base in Resources */,
 			);
